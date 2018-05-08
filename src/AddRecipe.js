@@ -75,19 +75,22 @@ class AddRecipe extends React.Component {
         />
         <button onClick={this.addIngredient} {...css(styles.button)}>Add Ingredient</button>
 
-        <div>
+        <div {...css(styles.instructions)}>
           <p>Recipe Instructions:</p>
           {
             this.state.instructions.map((instruction, i) => <p key={i}>{`${i + 1}. ${instruction}`}</p>)
           }
-        </div>
-        <input
+
+          <input
           value={this.state.instruction}
           onChange={evt => this.onChange('instruction', evt.target.value)}
           placeholder='Instruction'
           {...css(styles.input)}
-        />
-        <button onClick={this.addInstruction} {...css(styles.button)}>Add Instruction</button>
+          />
+          <p/>
+          <button onClick={this.addInstruction} {...css(styles.button)}>Add Instruction</button>
+
+        </div>
 
         <div {...css(styles.submitButton)} onClick={this.addRecipe}>
           <p>Add Recipe</p>
@@ -153,5 +156,8 @@ const styles = {
     ':hover': {
       opacity: 1
     }
+  },
+  instructions: {
+    padding: '8px 200px'
   }
 }
