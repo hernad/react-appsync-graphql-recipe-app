@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {compose, withPropsOnChange} from 'recompose';
 import { css } from 'glamor'
 import { graphql } from 'react-apollo'
 import ListRecipes from './queries/ListRecipes'
